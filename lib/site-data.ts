@@ -45,7 +45,7 @@ export const navItems: NavItem[] = [
   { label: "Services", href: "/services" },
   { label: "Case Studies", href: "/case-studies" },
   { label: "Blog", href: "/blog" },
-  { label: "Contact", href: "/contact" },
+  { label: "Contact", href: "/contact#audit-form" },
 ];
 
 export const trustLogos = [

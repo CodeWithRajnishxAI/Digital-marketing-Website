@@ -86,7 +86,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
               ))}
             </ul>
             <div className="mt-8">
-              <Button href="/contact">Request a growth audit</Button>
+              <Button href="/contact#audit-form">Request a growth audit</Button>
             </div>
           </div>
         </Container>

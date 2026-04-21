@@ -121,7 +121,7 @@ export function HomePage() {
                 content, digital strategy, and technology-backed execution.
               </p>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-                <Button href="/contact">Get Free Growth Audit</Button>
+                <Button href="/contact#audit-form">Get Free Growth Audit</Button>
                 <Button href="#book-call" variant="ghost">
                   Book Free Strategy Call
                 </Button>
@@ -439,27 +439,9 @@ export function HomePage() {
 
       <section id="book-call" className="py-20">
         <Container>
-          <div className="grid gap-8 lg:grid-cols-[1fr_0.95fr]">
+          <div className="grid gap-8">
             <RoiCalculator />
-            <div className="grid gap-8">
-              <AuditForm />
-              <div className="rounded-[2rem] bg-[#02253f] p-8 text-white shadow-[0_30px_80px_rgba(2,37,63,0.22)]">
-                <p className="text-sm font-semibold uppercase tracking-[0.3em] text-white/70">
-                  Bookings
-                </p>
-                <h3 className="mt-4 text-3xl font-bold tracking-tight">
-                  Calendly strategy call placeholder
-                </h3>
-                <p className="mt-3 text-sm leading-7 text-slate-200">
-                  Replace this panel with your live Calendly embed or booking widget
-                  when scheduling is ready.
-                </p>
-                <div className="mt-6 rounded-[1.5rem] border border-white/10 bg-white/10 p-5 text-sm text-white/80">
-                  AI chatbot placeholder available for future lead qualification and
-                  support flows.
-                </div>
-              </div>
-            </div>
+            <AuditForm />
           </div>
         </Container>
       </section>
@@ -492,7 +474,7 @@ export function HomePage() {
                 fastest path to stronger authority, better conversions, and measurable growth.
               </p>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-                <Button href="/contact">Get Free Growth Audit</Button>
+                <Button href="/contact#audit-form">Get Free Growth Audit</Button>
                 <Button href="#book-call" variant="secondary">
                   Book Free Strategy Call
                 </Button>

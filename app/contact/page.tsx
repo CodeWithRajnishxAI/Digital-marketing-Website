@@ -18,7 +18,7 @@ export default function ContactPage() {
         title="Talk to Zeebrag about building your next stage of digital growth."
         description="Share your goals, your current bottlenecks, and where you need the strongest execution support."
       />
-      <section className="py-20">
+      <section id="audit-form" className="scroll-mt-24 py-20">
         <Container className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
           <div className="rounded-[2rem] bg-[#02253f] p-8 text-white shadow-[0_30px_80px_rgba(2,37,63,0.2)]">
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-white/70">
@@ -31,7 +31,7 @@ export default function ContactPage() {
               <p>Email: contact.zeebrag@gmail.com</p>
               <p>Phone: +91 95225 55670</p>
               <p>Location: India</p>
-              <p>Calendly placeholder: replace with your live scheduling link or embed.</p>
+              <p>Book your free 30-min growth audit choose a time slot that works for you.</p>
             </div>
           </div>
           <AuditForm />

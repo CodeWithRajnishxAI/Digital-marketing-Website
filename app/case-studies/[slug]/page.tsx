@@ -67,7 +67,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
               ))}
             </div>
             <div className="mt-8">
-              <Button href="/contact">Start a similar project</Button>
+              <Button href="/contact#audit-form">Start a similar project</Button>
             </div>
           </aside>
           <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm">

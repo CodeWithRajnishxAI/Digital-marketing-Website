@@ -51,7 +51,7 @@ export function Navbar() {
           })}
         </nav>
 
-        <Button href="/contact" className="hidden lg:inline-flex">
+        <Button href="/contact#audit-form" className="hidden lg:inline-flex">
           Get Free Growth Audit
         </Button>
       </Container>
