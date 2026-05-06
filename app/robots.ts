@@ -6,6 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
+    host: "https://www.zeebrag.com",
     sitemap: "https://www.zeebrag.com/sitemap.xml",
   };
 }

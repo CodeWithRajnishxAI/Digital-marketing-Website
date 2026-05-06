@@ -1,10 +1,11 @@
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/seo/json-ld";
 import { PageHero } from "@/components/site/page-hero";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { createPageMetadata } from "@/lib/metadata";
-import { services } from "@/lib/site-data";
+import { serviceSeoContent, services } from "@/lib/site-data";
 
 type ServicePageProps = {
   params: Promise<{ slug: string }>;
@@ -36,6 +37,7 @@ export async function generateMetadata({ params }: ServicePageProps) {
 export default async function ServicePage({ params }: ServicePageProps) {
   const { slug } = await params;
   const service = services.find((item) => item.slug === slug);
+  const seoContent = serviceSeoContent[slug];
 
   if (!service) {
     notFound();
@@ -92,6 +94,31 @@ export default async function ServicePage({ params }: ServicePageProps) {
         </Container>
       </section>
       <section className="bg-white py-20">
+        <Container className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr]">
+          <article className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm">
+            <h2 className="text-3xl font-bold tracking-tight text-slate-950">
+              {service.name} for businesses in Bhopal and across India
+            </h2>
+            {seoContent.overview.map((paragraph) => (
+              <p key={paragraph} className="mt-4 text-base leading-8 text-slate-700">
+                {paragraph}
+              </p>
+            ))}
+          </article>
+          <aside className="rounded-[2rem] bg-slate-50 p-8 shadow-sm">
+            <h2 className="text-2xl font-bold tracking-tight text-slate-950">
+              Helpful next steps
+            </h2>
+            <p className="mt-4 text-sm leading-7 text-slate-700">
+              Explore the <Link href="/" className="font-semibold text-[var(--color-primary)]">homepage</Link>,
+              compare related <Link href="/services" className="font-semibold text-[var(--color-primary)]">digital marketing services</Link>,
+              and use the <Link href="/contact#audit-form" className="font-semibold text-[var(--color-primary)]">contact form</Link> if
+              you want Zeebrag to review your current setup.
+            </p>
+          </aside>
+        </Container>
+      </section>
+      <section className="bg-white py-20">
         <Container>
           <h2 className="text-3xl font-bold tracking-tight text-slate-950">
             Zeebrag delivery process
@@ -108,6 +135,45 @@ export default async function ServicePage({ params }: ServicePageProps) {
                 <h3 className="mt-3 text-xl font-bold tracking-tight text-slate-950">
                   {step}
                 </h3>
+              </article>
+            ))}
+          </div>
+        </Container>
+      </section>
+      <section className="py-20">
+        <Container className="grid gap-8 lg:grid-cols-2">
+          {seoContent.whyItMatters.map((block) => (
+            <article
+              key={block.heading}
+              className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm"
+            >
+              <h2 className="text-3xl font-bold tracking-tight text-slate-950">
+                {block.heading}
+              </h2>
+              {block.paragraphs.map((paragraph) => (
+                <p key={paragraph} className="mt-4 text-base leading-8 text-slate-700">
+                  {paragraph}
+                </p>
+              ))}
+            </article>
+          ))}
+        </Container>
+      </section>
+      <section className="bg-white py-20">
+        <Container>
+          <h2 className="text-3xl font-bold tracking-tight text-slate-950">
+            Frequently asked questions about {service.name}
+          </h2>
+          <div className="mt-8 grid gap-5 lg:grid-cols-3">
+            {seoContent.faqs.map((faq) => (
+              <article
+                key={faq.question}
+                className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm"
+              >
+                <h3 className="text-xl font-bold tracking-tight text-slate-950">
+                  {faq.question}
+                </h3>
+                <p className="mt-3 text-sm leading-7 text-slate-700">{faq.answer}</p>
               </article>
             ))}
           </div>

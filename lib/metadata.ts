@@ -19,6 +19,7 @@ type MetadataInput = {
   description: string;
   path?: string;
   keywords?: string[];
+  image?: string;
 };
 
 export function createPageMetadata({
@@ -26,8 +27,10 @@ export function createPageMetadata({
   description,
   path = "/",
   keywords = [],
+  image = "/icon.png",
 }: MetadataInput): Metadata {
   const url = new URL(path, siteUrl).toString();
+  const imageUrl = new URL(image, siteUrl).toString();
 
   return {
     title,
@@ -44,11 +47,20 @@ export function createPageMetadata({
       siteName,
       locale: siteConfig.locale,
       type: "website",
+      images: [
+        {
+          url: imageUrl,
+          width: 1200,
+          height: 630,
+          alt: `${title} | ${siteName}`,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
+      images: [imageUrl],
     },
   };
 }

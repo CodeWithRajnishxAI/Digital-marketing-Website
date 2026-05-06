@@ -18,7 +18,7 @@ export function Navbar() {
           <div className="flex h-14 w-14 items-center justify-center overflow-hidden rounded-2xl border border-slate-200 bg-white p-1 shadow-lg shadow-sky-900/10">
             <Image
               src="/Zeebrag_logo.jpg-removebg-preview.png"
-              alt="Zeebrag logo"
+              alt="Zeebrag digital marketing agency logo in Bhopal"
               width={112}
               height={112}
               priority

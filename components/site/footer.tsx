@@ -11,6 +11,14 @@ function InstagramIcon() {
   );
 }
 
+function FacebookIcon() {
+  return (
+    <svg viewBox="0 0 24 24" className="h-6 w-6 fill-current" aria-hidden="true">
+      <path d="M13.34 21v-7.15h2.4l.36-2.79h-2.76V9.28c0-.81.22-1.36 1.39-1.36h1.49V5.43c-.26-.03-1.13-.11-2.15-.11-2.12 0-3.57 1.29-3.57 3.67v2.07H8.1v2.79h2.4V21h2.84Z" />
+    </svg>
+  );
+}
+
 function LinkedInIcon() {
   return (
     <svg viewBox="0 0 24 24" className="h-6 w-6 fill-current" aria-hidden="true">
@@ -28,7 +36,7 @@ export function Footer() {
             <Link href="/" className="inline-flex rounded-2xl bg-white px-4 py-3 shadow-sm">
               <Image
                 src="/Zeebrag_logo.jpg-removebg-preview.png"
-                alt="Zeebrag logo"
+                alt="Zeebrag growth-tech agency logo in Bhopal"
                 width={180}
                 height={72}
                 className="h-12 w-auto object-contain"
@@ -43,6 +51,15 @@ export function Footer() {
               create stronger visibility, better conversions, and scalable growth.
             </p>
             <div className="mt-6 flex items-center gap-4">
+              <a
+                href="https://www.facebook.com/share/18SfvKKZhY/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Zeebrag on Facebook"
+                className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-white text-[var(--color-primary)] shadow-sm transition hover:-translate-y-0.5 hover:text-[var(--color-secondary)]"
+              >
+                <FacebookIcon />
+              </a>
               <a
                 href="https://www.instagram.com/zeebrag_com?igsh=Nmo4b2JrZnVzaHJ2"
                 target="_blank"

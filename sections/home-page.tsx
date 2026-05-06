@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { AuditForm } from "@/components/forms/audit-form";
 import { FaqList } from "@/components/forms/faq-list";
-import { NewsletterForm } from "@/components/forms/newsletter-form";
 import { RoiCalculator } from "@/components/forms/roi-calculator";
 import { JsonLd } from "@/components/seo/json-ld";
 import { Button } from "@/components/ui/button";
@@ -16,11 +15,55 @@ import {
   trustLogos,
 } from "@/lib/site-data";
 
+function StrategyIcon() {
+  return (
+    <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+      <path d="M4 19 19 4" />
+      <path d="M9 4h10v10" />
+      <path d="M5 8v11h11" />
+    </svg>
+  );
+}
+
+function CreativeIcon() {
+  return (
+    <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+      <path d="M12 3c3.3 0 6 2.46 6 5.5 0 1.24-.44 2.38-1.18 3.28-.8.98-1.82 1.8-2.43 2.88-.42.74-.54 1.43-.59 2.34h-3.6c-.05-.91-.17-1.6-.59-2.34-.61-1.08-1.63-1.9-2.43-2.88A5.2 5.2 0 0 1 6 8.5C6 5.46 8.7 3 12 3Z" />
+      <path d="M9.5 19h5" />
+      <path d="M10 22h4" />
+    </svg>
+  );
+}
+
+function TechnologyIcon() {
+  return (
+    <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+      <rect x="4" y="5" width="16" height="11" rx="2" />
+      <path d="M10 19h4" />
+      <path d="M8 16v3" />
+      <path d="M16 16v3" />
+      <path d="M9 10h6" />
+    </svg>
+  );
+}
+
+function getPillarIcon(title: string) {
+  if (title.includes("Strategy")) {
+    return <StrategyIcon />;
+  }
+
+  if (title.includes("Creative")) {
+    return <CreativeIcon />;
+  }
+
+  return <TechnologyIcon />;
+}
+
 function DashboardMock() {
   return (
     <div className="relative isolate mx-auto w-full max-w-2xl">
       <div className="absolute inset-0 -z-10 rounded-[2rem] bg-[radial-gradient(circle_at_top,rgba(4,119,191,0.35),transparent_55%)] blur-2xl" />
-      <div className="rounded-[2rem] border border-white/50 bg-white/75 p-5 shadow-[0_30px_80px_rgba(15,23,42,0.12)] backdrop-blur-xl">
+      <div className="rounded-[2rem] border border-white/50 bg-white/75 p-5 shadow-[0_30px_80px_rgba(15,23,42,0.12)] backdrop-blur-xl 2xl:px-8 2xl:pb-10 2xl:pt-6">
         <div className="flex items-center justify-between">
           <div>
             <p className="text-sm font-semibold text-slate-500">Growth dashboard</p>
@@ -73,17 +116,6 @@ function DashboardMock() {
           </div>
         </div>
 
-        <div className="pointer-events-none absolute -left-6 top-10 rounded-2xl border border-white/60 bg-white/80 p-4 shadow-xl backdrop-blur">
-          <p className="text-xs uppercase tracking-[0.3em] text-slate-500">Traffic</p>
-          <p className="mt-2 text-2xl font-bold text-slate-950">200%</p>
-          <p className="text-sm text-slate-500">Organic growth</p>
-        </div>
-
-        <div className="pointer-events-none absolute -bottom-8 right-4 rounded-2xl border border-white/60 bg-white/80 p-4 shadow-xl backdrop-blur">
-          <p className="text-xs uppercase tracking-[0.3em] text-slate-500">Pipeline</p>
-          <p className="mt-2 text-2xl font-bold text-slate-950">Rs 18L</p>
-          <p className="text-sm text-slate-500">Influenced revenue</p>
-        </div>
       </div>
     </div>
   );
@@ -101,7 +133,11 @@ export function HomePage() {
           description:
             "Zeebrag is a tech-driven growth and digital solutions company helping startups and businesses scale faster.",
           areaServed: "India",
-          sameAs: ["https://www.linkedin.com", "https://www.instagram.com"],
+          sameAs: [
+            "https://www.linkedin.com/company/zeebrag/",
+            "https://www.instagram.com/zeebrag_com?igsh=Nmo4b2JrZnVzaHJ2",
+            "https://www.facebook.com/share/18SfvKKZhY/",
+          ],
         }}
       />
 
@@ -114,11 +150,11 @@ export function HomePage() {
                 Trusted by 50+ growing brands
               </span>
               <h1 className="mt-8 max-w-3xl text-balance text-5xl font-extrabold tracking-tight text-slate-950 sm:text-6xl">
-                Scale Your Brand with Technology-Driven Growth That Actually Converts
+                Scale Your Brand with Growth That Converts
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
-                Zeebrag helps startups and modern businesses grow through branding,
-                content, digital strategy, and technology-backed execution.
+                Zeebrag helps startups grow with branding, content, strategy, and
+                tech-backed execution.
               </p>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                 <Button href="/contact#audit-form">Get Free Growth Audit</Button>
@@ -158,6 +194,49 @@ export function HomePage() {
         </Container>
       </section>
 
+      <section className="bg-white py-20">
+        <Container className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr]">
+          <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm">
+            <h2 className="text-3xl font-bold tracking-tight text-slate-950">
+              Zeebrag helps brands in Bhopal and across India build demand systems that scale
+            </h2>
+            <p className="mt-4 text-base leading-8 text-slate-700">
+              Growth gets harder when the website, content, paid campaigns, and brand positioning
+              are all moving in different directions. Zeebrag was built to solve that problem for
+              startups, founder-led companies, and service businesses that need a more connected
+              digital growth model. We combine strategy, execution, technology, and measurement so
+              the business does not just look active online. It becomes easier to discover, trust,
+              and contact.
+            </p>
+            <p className="mt-4 text-base leading-8 text-slate-700">
+              For businesses in Bhopal, India, that often means creating clearer service pages,
+              stronger local and national search visibility, better ad-to-landing-page alignment,
+              and founder messaging that communicates authority more quickly. For growth-stage
+              brands serving wider markets, the same process helps reduce friction inside the
+              funnel, improve conversion rates, and make reporting more meaningful for leadership.
+            </p>
+            <p className="mt-4 text-base leading-8 text-slate-700">
+              If you are comparing providers, a good place to continue is our
+              <Link href="/services" className="font-semibold text-[var(--color-primary)]"> services page</Link>,
+              our latest <Link href="/case-studies" className="font-semibold text-[var(--color-primary)]">case studies</Link>,
+              or the <Link href="/contact#audit-form" className="font-semibold text-[var(--color-primary)]">contact form</Link>
+              where you can request a practical growth audit for your current setup.
+            </p>
+          </div>
+          <div className="rounded-[2rem] bg-slate-50 p-8 shadow-sm">
+            <h2 className="text-2xl font-bold tracking-tight text-slate-950">
+              Why businesses choose Zeebrag
+            </h2>
+            <ul className="mt-6 space-y-4 text-sm leading-7 text-slate-700">
+              <li>We connect SEO, paid growth, website performance, branding, and analytics into one growth narrative.</li>
+              <li>We build for commercial intent, not vanity traffic, so visibility improvements support real business conversations.</li>
+              <li>We understand how regional brands in Bhopal and national businesses in India need different execution priorities.</li>
+              <li>We create content and service pages that also strengthen your internal linking and indexing structure.</li>
+            </ul>
+          </div>
+        </Container>
+      </section>
+
       <section className="py-20">
         <Container>
           <SectionHeading
@@ -192,7 +271,7 @@ export function HomePage() {
                 className="rounded-[2rem] border border-slate-200 bg-[linear-gradient(180deg,#ffffff_0%,#f7fbff_100%)] p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
               >
                 <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[linear-gradient(135deg,var(--color-primary),var(--color-secondary))] text-lg font-bold text-white">
-                  +
+                  {getPillarIcon(pillar.title)}
                 </div>
                 <h3 className="mt-6 text-2xl font-bold tracking-tight text-slate-950">
                   {pillar.title}
@@ -467,7 +546,7 @@ export function HomePage() {
                 Final CTA
               </p>
               <h2 className="mt-4 text-balance text-4xl font-extrabold tracking-tight sm:text-5xl">
-                Ready to Build a Brand That Scales Faster?
+                Ready to Scale Faster?
               </h2>
               <p className="mt-5 text-lg leading-8 text-slate-100">
                 Limited strategy slots available this month. Let’s identify the
@@ -485,16 +564,22 @@ export function HomePage() {
       </section>
 
       <section className="bg-[#02253f] py-16">
-        <Container className="grid gap-8 lg:grid-cols-[1fr_0.9fr] lg:items-end">
+        <Container className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-white/70">
-              Newsletter
+              Contact us
             </p>
             <h2 className="mt-4 text-4xl font-extrabold tracking-tight text-white">
-              Growth ideas, content systems, and conversion insights for modern brands.
+              Tell us about your brand, goals, and where growth feels stuck.
             </h2>
+            <p className="mt-4 max-w-2xl text-base leading-8 text-slate-200">
+              Share your details and our team will reach out to understand your
+              current challenges, growth priorities, and the fastest next steps.
+            </p>
           </div>
-          <NewsletterForm />
+          <div className="lg:pl-6">
+            <AuditForm />
+          </div>
         </Container>
       </section>
     </>

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { PageHero } from "@/components/site/page-hero";
 import { Button } from "@/components/ui/button";
@@ -73,6 +74,25 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
           <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm">
             <section>
               <h2 className="text-3xl font-bold tracking-tight text-slate-950">
+                Why this case study matters
+              </h2>
+              <p className="mt-4 text-base leading-8 text-slate-700">
+                Growth case studies matter because they show what changed in the real world, not
+                just what looked good in a proposal. For businesses in Bhopal and across India,
+                they can reveal how messaging, paid media, website structure, and founder
+                visibility work together when the goal is measurable demand. Zeebrag uses this
+                format to make strategy transparent so readers can see both the thinking and the
+                operational moves behind the outcome.
+              </p>
+              <p className="mt-4 text-base leading-8 text-slate-700">
+                The details below explain the starting challenge, the decisions made during the
+                engagement, and the impact those decisions had on leads, conversion quality, or
+                revenue momentum. That helps prospects understand whether the same framework might
+                apply to their market, their offer, or their current funnel constraints.
+              </p>
+            </section>
+            <section>
+              <h2 className="text-3xl font-bold tracking-tight text-slate-950">
                 Client problem
               </h2>
               <p className="mt-4 text-base leading-8 text-slate-700">{study.problem}</p>
@@ -97,6 +117,26 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
                   </li>
                 ))}
               </ul>
+            </section>
+            <section className="mt-10">
+              <h2 className="text-3xl font-bold tracking-tight text-slate-950">
+                What brands can learn from this project
+              </h2>
+              <p className="mt-4 text-base leading-8 text-slate-700">
+                The biggest lesson from this case study is that results usually improve when the
+                full path from discovery to conversion is treated as one system. Better campaigns
+                help, but stronger positioning, cleaner landing pages, better follow-up structure,
+                and tighter reporting usually create the real compounding effect. That is why
+                Zeebrag looks beyond single-channel wins and focuses on the growth mechanics behind
+                the numbers.
+              </p>
+              <p className="mt-4 text-base leading-8 text-slate-700">
+                If you want to compare this example with other work, continue to the
+                <Link href="/case-studies" className="font-semibold text-[var(--color-primary)]"> case study hub</Link>,
+                review our <Link href="/services" className="font-semibold text-[var(--color-primary)]">services</Link>, or
+                use the <Link href="/contact#audit-form" className="font-semibold text-[var(--color-primary)]">contact page</Link>
+                to request a growth audit for your own business.
+              </p>
             </section>
           </div>
         </Container>
