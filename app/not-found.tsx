@@ -13,8 +13,8 @@ export default function NotFound() {
             This page is out of range.
           </h1>
           <p className="mt-5 text-lg leading-8 text-slate-600">
-            The page you requested does not exist or may have moved. Let’s get you
-            back to Zeebrag’s main conversion path.
+            The page you requested does not exist or may have moved. Let&apos;s get you
+            back to Zeebrag&apos;s main conversion path.
           </p>
           <Link
             href="/"

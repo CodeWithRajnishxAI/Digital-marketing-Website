@@ -5,9 +5,9 @@ import { createPageMetadata } from "@/lib/metadata";
 import { services } from "@/lib/site-data";
 
 export const metadata = createPageMetadata({
-  title: "Digital Marketing Services in Bhopal, India | Zeebrag",
+  title: "Growth Services for Modern Brands in India | Zeebrag",
   description:
-    "Explore Zeebrag services in Bhopal, India for SEO, Meta Ads, Google Ads, website development, and personal branding.",
+    "Explore Zeebrag services for SEO, paid growth, personal branding, and premium website development across India and global markets.",
   path: "/services",
 });
 
@@ -16,8 +16,8 @@ export default function ServicesPage() {
     <>
       <PageHero
         eyebrow="Services"
-        title="Growth services designed for premium brands that want measurable momentum."
-        description="Zeebrag combines strategy, creative execution, technology, and optimization to build stronger demand systems."
+        title="Growth services designed for modern brands that want sharper positioning and measurable momentum."
+        description="Zeebrag combines strategy, creative execution, technology, and optimization to build premium brand and demand systems."
       />
       <section className="py-20">
         <Container>

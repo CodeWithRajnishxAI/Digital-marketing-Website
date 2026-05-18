@@ -22,7 +22,7 @@ export function Button({
         variant === "primary" &&
           "bg-[var(--color-accent)] text-white shadow-[0_18px_40px_rgba(242,106,27,0.28)] hover:-translate-y-0.5 hover:bg-[var(--color-accent-hover)]",
         variant === "secondary" &&
-          "border border-white/25 bg-white/10 text-slate-900 backdrop-blur hover:border-[var(--color-secondary)] hover:bg-white/80",
+          "border border-white/20 bg-white/12 text-white backdrop-blur-xl hover:border-white/40 hover:bg-white/20",
         variant === "ghost" &&
           "border border-slate-200 bg-white text-slate-900 hover:border-[var(--color-secondary)] hover:text-[var(--color-primary)]",
         className,

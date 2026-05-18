@@ -7,7 +7,7 @@ export function NewsletterForm() {
 
   return subscribed ? (
     <p className="rounded-full bg-white/20 px-4 py-3 text-sm text-white">
-      You’re in. We’ll share practical growth insights and conversion ideas.
+      You&apos;re in. We&apos;ll share practical growth insights and conversion ideas.
     </p>
   ) : (
     <form

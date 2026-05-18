@@ -52,9 +52,10 @@ export type FaqItem = {
 };
 
 export const navItems: NavItem[] = [
+  { label: "Home", href: "/" },
   { label: "Services", href: "/services" },
   { label: "Case Studies", href: "/case-studies" },
-  { label: "Blog", href: "/blog" },
+  { label: "About", href: "/about" },
   { label: "Contact", href: "/contact#audit-form" },
 ];
 
@@ -308,7 +309,7 @@ export const blogs: BlogPost[] = [
       {
         heading: "Social proof reduces friction",
         content:
-          "Specific outcomes, recognizable logos, and founder testimonials reduce skepticism because they answer the buyer’s unspoken question: why should I trust you? Strong social proof works best when it is concrete. Instead of saying results improved, show the traffic growth, lead volume, revenue lift, or conversion increase. That level of detail helps a landing page feel more credible and less promotional. For service brands competing in India, especially in crowded categories, proof is often the section that makes the difference between passive browsing and an actual inquiry.",
+          "Specific outcomes, recognizable logos, and founder testimonials reduce skepticism because they answer the buyer's unspoken question: why should I trust you? Strong social proof works best when it is concrete. Instead of saying results improved, show the traffic growth, lead volume, revenue lift, or conversion increase. That level of detail helps a landing page feel more credible and less promotional. For service brands competing in India, especially in crowded categories, proof is often the section that makes the difference between passive browsing and an actual inquiry.",
       },
       {
         heading: "Every section should answer one conversion question",
@@ -482,7 +483,7 @@ export const serviceSeoContent: Record<
       {
         question: "How do you reduce wasted spend?",
         answer:
-          "We improve targeting through search term analysis, negative keywords, tighter ad grouping, and landing pages that match the searcher’s actual need.",
+          "We improve targeting through search term analysis, negative keywords, tighter ad grouping, and landing pages that match the searcher's actual need.",
       },
       {
         question: "Do you support Bhopal-focused campaigns?",
@@ -582,7 +583,7 @@ export const blogResourceContent = {
   overview: [
     "The Zeebrag blog is designed to support both informational and commercial search intent. Instead of publishing content for volume alone, we focus on the questions founders, marketers, and business owners in Bhopal and across India actually ask when they want to improve growth performance. That means practical frameworks, actionable explanations, and articles that naturally connect readers to the next useful page on the site.",
     "A strong blog also improves how search engines understand your expertise. When articles link thoughtfully to service pages, case studies, and the contact route, they do more than attract traffic. They help visitors move through a clearer journey from discovery to decision. Zeebrag uses content clusters to make that path easier to crawl and easier to convert.",
-    "Whether someone is researching founder branding, paid acquisition, SEO, or website conversion, the goal of this resource hub is the same: help them learn something valuable, understand Zeebrag’s approach, and find the most relevant next step without friction.",
+    "Whether someone is researching founder branding, paid acquisition, SEO, or website conversion, the goal of this resource hub is the same: help them learn something valuable, understand Zeebrag's approach, and find the most relevant next step without friction.",
   ],
 };
 

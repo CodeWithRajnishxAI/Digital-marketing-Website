@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 
 const siteUrl = "https://www.zeebrag.com";
 const siteName = "Zeebrag";
-const defaultTitle = "Zeebrag | Tech-Driven Growth Partner for Modern Brands";
+const defaultTitle = "Zeebrag | Premium Branding and Growth Studio";
 const defaultDescription =
-  "Zeebrag helps startups and growing businesses scale with digital strategy, performance marketing, personal branding, content systems, and website development.";
+  "Zeebrag is a modern branding and growth studio built in India, working with brands globally across content, websites, strategy, and performance-led growth.";
 
 export const siteConfig = {
   name: siteName,

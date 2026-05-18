@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { CalendlyPopupButton } from "@/components/site/calendly-popup-button";
 import { Container } from "@/components/ui/container";
 import { navItems, services } from "@/lib/site-data";
 
@@ -31,25 +32,57 @@ export function Footer() {
   return (
     <footer className="bg-[#02253f] pb-28 pt-16 text-slate-200 md:pb-16">
       <Container>
+        <div className="mb-12 rounded-[2rem] border border-white/10 bg-[linear-gradient(135deg,rgba(255,255,255,0.12),rgba(255,255,255,0.04))] p-8 shadow-[0_25px_80px_rgba(2,37,63,0.35)] backdrop-blur">
+          <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+            <div className="max-w-2xl">
+              <p className="text-xs font-semibold uppercase tracking-[0.32em] text-white/60">
+                Global Collaboration
+              </p>
+              <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-white">
+                Built in India. Working with brands globally.
+              </h2>
+              <p className="mt-3 text-sm leading-7 text-slate-300">
+                Zeebrag partners with founders, startups, and modern brands across
+                time zones for strategy, content systems, websites, and demand growth.
+              </p>
+            </div>
+            <div className="flex flex-col gap-3 sm:flex-row">
+              <CalendlyPopupButton label="Let's Talk" />
+              <a
+                href="mailto:contact.zeebrag@gmail.com"
+                className="inline-flex items-center justify-center rounded-full border border-white/16 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/16"
+              >
+                Email Zeebrag
+              </a>
+            </div>
+          </div>
+        </div>
+
         <div className="grid gap-12 lg:grid-cols-[1.5fr_1fr_1fr]">
           <div className="max-w-xl">
             <Link href="/" className="inline-flex rounded-2xl bg-white px-4 py-3 shadow-sm">
               <Image
                 src="/Zeebrag_logo.jpg-removebg-preview.png"
-                alt="Zeebrag growth-tech agency logo in Bhopal"
+                alt="Zeebrag premium branding and growth studio logo"
                 width={180}
                 height={72}
                 className="h-12 w-auto object-contain"
               />
             </Link>
             <h2 className="mt-6 text-2xl font-extrabold tracking-tight text-white">
-              Zeebrag is the premium growth partner for brands that want strategy,
-              execution, and measurable momentum.
+              Zeebrag is a modern branding and growth studio for businesses that
+              want attention to convert into trust.
             </h2>
             <p className="mt-4 text-sm leading-7 text-slate-300">
-              Technology, creativity, and data-backed execution working together to
-              create stronger visibility, better conversions, and scalable growth.
+              Remote-first, performance-focused, and built for founders who care
+              about positioning, content relevance, conversion quality, and long-term
+              brand equity.
             </p>
+            <div className="mt-6 grid gap-2 text-sm text-slate-300">
+              <p>Email: contact.zeebrag@gmail.com</p>
+              <p>Phone: +91 95225 55670</p>
+              <p>Available across India, UAE, UK and US-friendly hours</p>
+            </div>
             <div className="mt-6 flex items-center gap-4">
               <a
                 href="https://www.facebook.com/share/18SfvKKZhY/"
@@ -116,10 +149,16 @@ export function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col gap-3 border-t border-white/10 pt-8 text-sm text-slate-400 sm:flex-row sm:items-center sm:justify-between">
-          <p>Copyright 2026 Zeebrag. Built for premium, measurable growth.</p>
+          <p>Copyright 2026 Zeebrag. Premium branding and growth systems for modern brands.</p>
           <div className="flex items-center gap-4">
             <Link href="/contact" className="hover:text-white">
               Contact
+            </Link>
+            <Link href="/about" className="hover:text-white">
+              About
+            </Link>
+            <Link href="/blog" className="hover:text-white">
+              Blog
             </Link>
             <Link href="/thank-you" className="hover:text-white">
               Thank You

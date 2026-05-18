@@ -1,54 +1,73 @@
 "use client";
 
+import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+
 const faqs = [
   {
-    question: "How fast can we see growth?",
+    question: "How does Zeebrag work?",
     answer:
-      "Early improvements often show within the first few weeks through positioning, landing page, and campaign refinements. Compounding channels like SEO and authority content take longer but create stronger long-term momentum.",
+      "We begin with clarity: positioning, audience, funnel friction, and content gaps. From there we build the right mix of strategy, creative systems, website experience, and growth execution so the brand feels sharper and converts better.",
   },
   {
-    question: "Do you work with startups?",
+    question: "Do you work internationally?",
     answer:
-      "Yes. Zeebrag is built for startups and modern businesses that need a premium growth partner without building a large in-house team too early.",
+      "Yes. Zeebrag is built in India and works remotely with brands across India and global markets. We structure communication around shared planning, fast feedback loops, and calls across IST, UAE, UK and US-friendly hours.",
   },
   {
-    question: "Do you provide websites too?",
+    question: "Do you offer personal branding?",
     answer:
-      "Yes. We handle conversion-focused websites, landing pages, messaging structure, and supporting analytics foundations.",
+      "Yes. Founder positioning, authority-building content, and narrative clarity are a core part of the Zeebrag approach, especially for brands where trust is closely tied to the people behind the business.",
   },
   {
-    question: "Is branding included?",
+    question: "How long does growth take?",
     answer:
-      "Brand clarity is embedded into our work. Depending on scope, we cover founder branding, positioning, visual polish, and message architecture.",
+      "Some wins show quickly through sharper messaging, cleaner offers, and better conversion paths. Compounding channels like SEO, content systems, and brand authority take longer, but they create stronger momentum over time.",
   },
   {
-    question: "How is ROI measured?",
+    question: "What industries do you work with?",
     answer:
-      "We track growth using business-relevant KPIs such as qualified leads, CAC efficiency, ROAS, conversion rate improvements, and traffic quality.",
-  },
-  {
-    question: "What industries do you serve?",
-    answer:
-      "We primarily support startups, B2B services, SaaS, D2C, and founder-led brands that need stronger digital authority and scalable acquisition.",
+      "We primarily work with startups, founder-led brands, service businesses, SaaS, D2C, and modern companies that care about positioning, attention quality, and measurable growth.",
   },
 ];
 
 export function FaqList() {
+  const [openItem, setOpenItem] = useState<string>(faqs[0]?.question ?? "");
+
   return (
     <div className="grid gap-4">
       {faqs.map((faq) => (
-        <details
+        <div
           key={faq.question}
-          className="group rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-sm transition open:border-[var(--color-secondary)]/40 open:shadow-lg"
+          className="rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-sm transition"
         >
-          <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-lg font-semibold text-slate-950">
-            {faq.question}
-            <span className="text-2xl text-[var(--color-primary)] transition group-open:rotate-45">
-              +
+          <button
+            type="button"
+            onClick={() =>
+              setOpenItem((current) => (current === faq.question ? "" : faq.question))
+            }
+            className="flex w-full items-center justify-between gap-4 text-left text-lg font-semibold text-slate-950"
+            aria-expanded={openItem === faq.question}
+          >
+            <span>{faq.question}</span>
+            <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-slate-50 text-xl text-[var(--color-primary)]">
+              {openItem === faq.question ? "-" : "+"}
             </span>
-          </summary>
-          <p className="mt-4 pr-8 text-sm leading-7 text-slate-600">{faq.answer}</p>
-        </details>
+          </button>
+          <AnimatePresence initial={false}>
+            {openItem === faq.question ? (
+              <motion.p
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: "auto", opacity: 1 }}
+                exit={{ height: 0, opacity: 0 }}
+                transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+                className="overflow-hidden pr-8 pt-4 text-sm leading-7 text-slate-600"
+              >
+                {faq.answer}
+              </motion.p>
+            ) : null}
+          </AnimatePresence>
+        </div>
       ))}
     </div>
   );

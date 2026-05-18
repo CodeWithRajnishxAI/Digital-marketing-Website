@@ -2,17 +2,17 @@ import { HomePage } from "@/sections/home-page";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "Digital Marketing Agency in Bhopal, India | Zeebrag",
+  title: "Premium Branding and Growth Studio in India | Zeebrag",
   description:
-    "Zeebrag is a Bhopal-based digital marketing and growth agency helping brands in India scale with SEO, ads, branding, and websites.",
+    "Zeebrag is a premium branding and growth studio built in India, helping startups and modern brands grow across India and global markets.",
   path: "/",
   keywords: [
-    "digital marketing agency in bhopal",
-    "growth agency india",
-    "digital growth partner",
-    "startup marketing agency india",
-    "website development company",
-    "personal branding agency",
+    "branding studio india",
+    "growth studio bhopal",
+    "premium growth agency india",
+    "startup branding partner",
+    "website development company india",
+    "personal branding agency india",
   ],
 });
 
